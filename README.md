@@ -31,9 +31,15 @@
 
 ## Launcher Child Class
 - Create a C++ class derived from Launcher: "LauncherChild_1"
+  - Declare a float variable to be the specific launching speed for this child class
+  - Declare BeginPlay()
+  - Define BeginPlay() extending from the parent class and inside it call StartTimer() inherited from the parent class passing the StartTime variable specific for this class 
 - Create a Blueprint based on this class
   - Add a mesh to it
   - Check simulate physics
+  - Mark collision as "no collision"
+  - in the projectile slot exposed in the C++ Launcher class, select the projectile blueprint that this specific class will launch.
+- Add the launcher BP to the world
 
 ## Projectile Child Class
 - Create a C++ class derived from Launcher: "ProjectileChild_1"
