@@ -26,3 +26,20 @@
   - Define SpawnProjectile() and make it spawn the projectile at the launcher location 
   - Define the timer setter and make it call SpawnProjectile()
   - On BeginPlay() get launcher location and rotation and start the timer
+
+# Child Classes
+
+## Launcher Child Class
+- Create a C++ class derived from Launcher: "LauncherChild_1"
+- Create a Blueprint based on this class
+  - Add a mesh to it
+  - Check simulate physics
+
+## Projectile Child Class
+- Create a C++ class derived from Launcher: "ProjectileChild_1"
+- Create a Blueprint based on this class
+  - Add a mesh to it
+  - Check simulate physics
+
+
+
