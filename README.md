@@ -90,6 +90,7 @@ void AProjectile::Launch(FVector ProjectileImpulse)
 - Header file
   - Declare a projectile object and expose it to the blueprint
   - Declare a SpawnProjectile() function and expose it to the blueprint
+  - #include "TimerManager.h"
   - Declare a StartTimer() function and pass in a float parameter to be the time range in between shots
   - Declare a FVector for the launcher location and a FRotator for the launcher rotation
   - Declare a timer handle variable
