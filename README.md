@@ -172,7 +172,8 @@ void ALauncher::SpawnProjectile()
 - Create a C++ class derived from Launcher: "ProjectileChild_1"
 - Create a Blueprint based on this class
   - Add a mesh to it
-  - Check simulate physics
+  - Check simulate physics on
+  - Check collision as physics actor
 
 - Header File
   - Declare the constructor for this class
