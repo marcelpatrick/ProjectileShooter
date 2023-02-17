@@ -168,6 +168,38 @@ void ALauncher::SpawnProjectile()
 
 # Child Classes
 
+## Projectile Child Class
+- Create a C++ class derived from Launcher: "ProjectileChild_1"
+- Create a Blueprint based on this class
+  - Add a mesh to it
+  - Check simulate physics
+
+- Header File
+  - Declare the constructor for this class
+  - Declare a vector to be the impulse for this specific projectile and pass in its values in the X axis
+```cpp
+UCLASS()
+class PROJECTILESHOOTER_API AProjectileChild_1 : public AProjectile
+{
+	GENERATED_BODY()
+	
+public:
+	AProjectileChild_1();
+
+private:
+	FVector StrongImpulse = FVector(1000.0f, 0.0f, 0.0f); 
+};
+```
+
+- Implementation file
+  - Inside the constructor, call the setter for the projectile impulse inherited from the parent class passing in the impulse vector specific for this projectile
+```cpp
+AProjectileChild_1::AProjectileChild_1()
+{
+    SetProjectileImpulse(StrongImpulse);
+}
+```
+
 ## Launcher Child Class
 - Create a C++ class derived from Launcher: "LauncherChild_1"
 - Create a Blueprint based on this class
@@ -204,37 +236,4 @@ void ALauncherChild_1::BeginPlay()
     StartTimer(ShootPauseFast);
 }
 ```
-
-## Projectile Child Class
-- Create a C++ class derived from Launcher: "ProjectileChild_1"
-- Create a Blueprint based on this class
-  - Add a mesh to it
-  - Check simulate physics
-
-- Header File
-  - Declare the constructor for this class
-  - Declare a vector to be the impulse for this specific projectile and pass in its values in the X axis
-```cpp
-UCLASS()
-class PROJECTILESHOOTER_API AProjectileChild_1 : public AProjectile
-{
-	GENERATED_BODY()
-	
-public:
-	AProjectileChild_1();
-
-private:
-	FVector StrongImpulse = FVector(1000.0f, 0.0f, 0.0f); 
-};
-```
-
-- Implementation file
-  - Inside the constructor, call the setter for the projectile impulse inherited from the parent class passing in the impulse vector specific for this projectile
-```cpp
-AProjectileChild_1::AProjectileChild_1()
-{
-    SetProjectileImpulse(StrongImpulse);
-}
-```
-
 
